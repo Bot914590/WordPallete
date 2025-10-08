@@ -1,0 +1,83 @@
+@use '../../node_modules/reset-css/sass/reset';
+@use './vars' as *;
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  font-family: $defaultFontFamily;
+  font-size: $defaultFontSize;
+  background: $defaultBackgroundColor;
+  color: $defaultTextColor;
+  line-height: $defaultLineHeight;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Global themed primitives matching NewGamePage aesthetics */
+:root {
+  --card-bg: rgba(255,255,255,.06);
+  --card-border: rgba(255,255,255,.1);
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --brand-1: #a5b4fc;
+  --brand-2: #818cf8;
+  --cyan-1: #22d3ee;
+  --cyan-2: #06b6d4;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(99,102,241,.12), transparent 40%),
+    radial-gradient(1000px 500px at 120% 10%, rgba(236,72,153,.12), transparent 40%),
+    linear-gradient(180deg, rgba(2,6,23,.8), rgba(2,6,23,.9));
+  color: var(--text-primary);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.segmented {
+  display: inline-flex;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 6px;
+  gap: 6px;
+}
+.segmentedBtn {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #cbd5e1;
+  background: transparent;
+  font-weight: 600;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.segmentedBtnActive { color:#111827; background: linear-gradient(180deg, var(--brand-1), var(--brand-2)); box-shadow: 0 6px 16px rgba(99,102,241,.35); }
+
+.btn { appearance:none; border:0; border-radius:10px; padding:10px 14px; font-weight:700; letter-spacing:.02em; cursor:pointer; }
+.btnPrimary { background: linear-gradient(180deg, var(--cyan-1), var(--cyan-2)); color:#06202a; box-shadow: 0 8px 18px rgba(34,211,238,.3); }
+.btnGhost { background: transparent; color: #c7d2fe; border: 1px solid rgba(199,210,254,.3); }

@@ -1,0 +1,18 @@
+@use '../../styles/vars' as *;
+@use '../../styles/mixins' as *;
+
+
+.games {
+  .game {
+    padding: 20px;
+      margin-top: 20px;
+      .title {
+        @include link;
+      }
+    }
+
+    .ideaLink {
+      @include link;
+
+    }
+  }
